@@ -1,4 +1,4 @@
-from utils import waiter
+from wetcli.utils import waiter
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.webdriver import WebDriver

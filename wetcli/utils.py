@@ -6,6 +6,8 @@ from selenium.webdriver.common.by import By
 
 
 def transfer_button_click(browser: WebDriver, for_upload=False):
+    waiter(browser, 'transfer__button')
+    
     accept_terms = browser.find_element_by_class_name('transfer__button')
     ActionChains(browser).move_to_element(
         accept_terms).click(accept_terms).perform()
@@ -14,7 +16,7 @@ def transfer_button_click(browser: WebDriver, for_upload=False):
         waiter(browser, 'spinner__label')
 
 
-def waiter(browser, class_name, timeout=10):
+def waiter(browser: WebDriver, class_name, timeout=10):
     WebDriverWait(browser, timeout).until(
         EC.presence_of_element_located(
             (By.CLASS_NAME, class_name))

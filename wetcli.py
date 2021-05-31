@@ -1,15 +1,14 @@
 import os
+from wetcli.files import sanitize_and_check_files
 from wetcli.browser import create_browser, destroy_broswer, load_ready_url
 from wetcli.utils import transfer_button_click, waiter
 from selenium.webdriver import ActionChains
 
 
-files = ['test_files/uploadtest.txt', 'test_files/uploadtest2.log']
-# TODO: unique file name check, file exists, 2GB max
-
+files = sanitize_and_check_files(os.listdir('test_files'))
 browser = load_ready_url(create_browser(), 'https://wetransfer.com/')
 
-# 1. Handling cookies
+# 1. COOKIES
 try:
     accept_cookie = browser.find_element_by_class_name('welcome__button--accept')
     accept_cookie.click()
@@ -17,7 +16,7 @@ try:
     transfer_button_click(browser)
 except Exception as e:
     print('ERROR: Accepting cookies', e)
-    destroy_broswer()
+    destroy_broswer(browser)
     quit()
 
 # 2. FORM FILL
@@ -47,10 +46,10 @@ try:
     print('GENERATED URL:')
     print(f'{link}')
 
-    destroy_broswer()
+    destroy_broswer(browser)
     quit()
 
 except Exception as e:
     print('Form Fill error', e)
-    destroy_broswer()
+    destroy_broswer(browser)
     quit()

@@ -25,6 +25,6 @@ python wetcli.py
 ## NEXT STEPS:
 - [ ] make it an actual cli
 - [ ] files only in test_files
-- [ ] validate file size and unique name
+- [x] validate file size and unique name
 - [ ] email mode?
 
