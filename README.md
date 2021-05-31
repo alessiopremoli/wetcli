@@ -19,7 +19,7 @@ touch test_files
 
 ### RUN
 ```bash
-python main.py
+python wetcli.py
 ```
 
 ## NEXT STEPS:
