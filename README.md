@@ -25,7 +25,7 @@ ln -s ${PWD}/wetcli.py $HOME/bin/wetcli
 ### USAGE
 Use the option `-d` to upload a directory
 ```bash
-wetcli -d my_awesome_directory:
+wetcli -d my_awesome_directory
 ```
 Use the option `-f` to upload a single file:
 ```bash
@@ -41,5 +41,6 @@ wetcli -f my_awesome_file.txt -m "Here my awesome file"
 - [x] make it an actual cli
 - [x] files only in test_files
 - [x] validate file size and unique name
+- [ ] a proper installer
 - [ ] email mode?
 
