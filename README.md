@@ -14,6 +14,9 @@ source env/bin/activate
 
 pip install -r requirements.txt
 
+echo $(pwd)/env/bin/python
+# copy the result on the first line of the wetcli.py script, to have a working shebang
+
 export PATH="$PATH:${PWD}"
 ln -s ${PWD}/wetcli.py $HOME/bin/wetcli
 
