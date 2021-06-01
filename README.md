@@ -14,7 +14,9 @@ source env/bin/activate
 
 pip install -r requirements.txt
 
-touch test_files
+export PATH="$PATH:${PWD}"
+ln -s ${PWD}/wetcli.py $HOME/bin/wetcli
+
 ``` 
 
 ### RUN
@@ -23,8 +25,8 @@ python wetcli.py
 ```
 
 ## NEXT STEPS:
-- [ ] make it an actual cli
-- [ ] files only in test_files
+- [x] make it an actual cli
+- [x] files only in test_files
 - [x] validate file size and unique name
 - [ ] email mode?
 

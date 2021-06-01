@@ -3,11 +3,12 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from enum import Enum
 
 
 def transfer_button_click(browser: WebDriver, for_upload=False):
     waiter(browser, 'transfer__button')
-    
+
     accept_terms = browser.find_element_by_class_name('transfer__button')
     ActionChains(browser).move_to_element(
         accept_terms).click(accept_terms).perform()
@@ -28,3 +29,8 @@ def better_int(text):
         return int(text)
     except:
         return(None)
+
+
+class Modes(Enum):
+    DIRECTORY = 'DIRECTORY'
+    FILE = 'FILE'
